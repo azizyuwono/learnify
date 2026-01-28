@@ -1,0 +1,39 @@
+name: Build App
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter build ios --release --no-codesign
+      - run: |
+          mkdir Payload
+          mv build/ios/iphoneos/Runner.app Payload
+          zip -r learnify_ios.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa
+          path: learnify_ios.ipa

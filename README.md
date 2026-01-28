@@ -2,6 +2,14 @@
 
 Learnify is a modern Flutter application designed for online learning. It features a clean UI/UX for browsing courses, managing profiles, and tracking learning progress.
 
+## Downloads
+
+You can download the latest Android build directly from this repository:
+
+- [**Download Android APK**](releases/learnify_android.apk)
+
+For iOS, you can download the IPA artifact from the [GitHub Actions](https://github.com/your-username/learnify/actions) page after a build completes.
+
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
