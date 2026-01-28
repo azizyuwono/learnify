@@ -13,18 +13,18 @@ class NotificationPage extends StatelessWidget {
       appBar: AppbarWidget(context, 'Notifications'),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Today',
               style: TextStyle(
                 fontSize: 14,
                 color: greyColor,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             Image.asset('assets/notif_image.png'),

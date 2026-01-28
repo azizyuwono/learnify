@@ -208,7 +208,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
           color: primaryColor,
         ),
         indicatorSize: TabBarIndicatorSize.tab,
-        labelColor: Colors.white,
+        labelColor: whiteColor,
         labelStyle: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,

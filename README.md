@@ -1,6 +1,15 @@
-# learnify
+# Learnify
 
-A new Flutter project.
+Learnify is a modern Flutter application designed for online learning. It features a clean UI/UX for browsing courses, managing profiles, and tracking learning progress.
+
+## Screenshots
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <img src="screenshots/mobile/01_splash.png" width="200" alt="Splash Screen">
+    <img src="screenshots/mobile/02_login.png" width="200" alt="Login Screen">
+    <img src="screenshots/mobile/04_home.png" width="200" alt="Home Screen">
+    <img src="screenshots/mobile/07_settings.png" width="200" alt="Settings Screen">
+</div>
 
 ## Getting Started
 

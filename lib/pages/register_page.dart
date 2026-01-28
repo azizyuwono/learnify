@@ -10,21 +10,21 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
-late TextEditingController nameController;
-late TextEditingController emailController;
-late TextEditingController mobileController;
-late TextEditingController passwordController;
-late TextEditingController confirmPasswordController;
-
 class _RegisterPageState extends State<RegisterPage> {
+  late TextEditingController nameController;
+  late TextEditingController emailController;
+  late TextEditingController mobileController;
+  late TextEditingController passwordController;
+  late TextEditingController confirmPasswordController;
+
   @override
   void initState() {
+    super.initState();
     nameController = TextEditingController();
     emailController = TextEditingController();
     mobileController = TextEditingController();
     passwordController = TextEditingController();
     confirmPasswordController = TextEditingController();
-    super.initState();
   }
 
   @override
