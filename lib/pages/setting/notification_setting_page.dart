@@ -99,7 +99,7 @@ class _NotificationSettingPageState extends State<NotificationSettingPage> {
                 ),
               ),
               CupertinoSwitch(
-                  activeColor: primaryColor,
+                  activeTrackColor: primaryColor,
                   value: checked.contains(label[index]),
                   onChanged: (value) {
                     onSelected(value, label[index]);

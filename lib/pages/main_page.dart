@@ -12,31 +12,25 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-int currentIndex = 0;
-
-List<String> icons = [
-  'icon_home.png',
-  'icon_learning.png',
-  'icon_user.png',
-];
-
-List<String> labels = [
-  'Home',
-  'My Learning',
-  'Profile',
-];
-
 class _MainPageState extends State<MainPage> {
-  @override
-  void initState() {
-    currentIndex = 0;
-    super.initState();
-  }
+  int _currentIndex = 0;
+
+  static const List<String> _icons = [
+    'icon_home.png',
+    'icon_learning.png',
+    'icon_user.png',
+  ];
+
+  static const List<String> _labels = [
+    'Home',
+    'My Learning',
+    'Profile',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: body(),
+        body: _body(),
         bottomNavigationBar: Container(
           color: whiteColor,
           padding: const EdgeInsets.symmetric(vertical: 20),
@@ -45,15 +39,18 @@ class _MainPageState extends State<MainPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              for (var i = 0; i + 1 <= icons.length; i++) ...[
+              for (var i = 0; i < _icons.length; i++) ...[
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      currentIndex = i;
+                      _currentIndex = i;
                     });
                   },
                   child: CustomNavBarItem(
-                      index: i, icon: icons[i], label: labels[i]),
+                    isSelected: _currentIndex == i,
+                    icon: _icons[i],
+                    label: _labels[i],
+                  ),
                 )
               ]
             ],
@@ -61,8 +58,8 @@ class _MainPageState extends State<MainPage> {
         ));
   }
 
-  Widget body() {
-    switch (currentIndex) {
+  Widget _body() {
+    switch (_currentIndex) {
       case 0:
         return const HomePage();
       case 1:
